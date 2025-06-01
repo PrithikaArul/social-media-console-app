@@ -4,7 +4,6 @@ import java.util.*;
 public class User extends Person{
 	
 	private String userName;
-
 	private String password;
 	private List<Post> posts;
 	private List<User> friends;

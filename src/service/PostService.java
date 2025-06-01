@@ -7,6 +7,7 @@ public class PostService {
 	
 	UserService userService;
 	Map<String, User> users;
+	String fromUser;
 	
 	public PostService(UserService userService)
 	{
@@ -81,11 +82,17 @@ public class PostService {
 	{
 		post.getLikes().add(username);
 		displayPost(post);
+		fromUser=username;
+		Notification notification = new LikeNotification(fromUser, post.getUserName(), post.getPostName());
+		notification.send();
 	}
 	
 	public void commentOnPost(Post post,String username, String comment)
 	{
 		post.getComments().put(username, comment);
 		displayPost(post);
+		fromUser=username;
+		Notification commentNotification = new CommentNotification(fromUser, post.getUserName(), comment);
+		commentNotification.send();
 	}
 }
