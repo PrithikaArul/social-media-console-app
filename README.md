@@ -22,5 +22,7 @@ A simple Java console application that simulates core features of a social media
 | Encapsulation | Private fields and public getters/setters in models   |
 | Abstraction   | Use of service classes to hide internal logic         |
 | Inheritance   | `Person` → `User`, `Admin` (if extended further) |
+| Polymorphism  | Notification on actions like `like()`, `comment()` on post |
+
 
 ---
